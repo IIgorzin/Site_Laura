@@ -1,0 +1,162 @@
+#envelope {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#envelope:hover{
+    transform:scale(1.);
+}
+
+.envelopeTampa{
+    width:0;
+    height:0;
+    border-left:110px solid transparent;
+    border-right:110px solid transparent;
+    border-top:80px solid #ffd6e5;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -78px;
+    transition: transform 1s ease;
+    transform-origin: top center;
+}
+
+.envelopeCorpo{
+    width:220px;
+    height:140px;
+    background:white;
+    border-radius:0 0 12px 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+    position:relative;
+    z-index: 1;
+}
+
+#envelope p{
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.abrindo{
+    animation: abrirEnvelope 0.8s ease;
+}
+
+@keyframes abrirEnvelope{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.1);
+    }
+
+    100%{
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+.tampaAberta{
+    transform: rotateX(180deg);
+}
+
+.controlesCarta{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#carta {
+    position: fixed;
+    inset: 0; 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 240, 245, 0.95);
+    z-index: 1000;
+}
+
+#carta * {
+    pointer-events: auto;
+}
+
+#conteudoCarta {
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    pointer-events: none; 
+    width: 280px;
+    max-height: 80vh;   
+    overflow-y: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+    opacity: 0;
+    transition: all 0.6s ease;
+    z-index: 1001;
+}
+
+#conteudoCarta.mostrar {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: auto; 
+}
+
+#conteudoCarta::-webkit-scrollbar {
+    width: 6px;
+}
+
+#conteudoCarta::-webkit-scrollbar-thumb {
+    background: #d6336c;
+    border-radius: 10px;
+}
+
+.cartaVisivel {
+    display: block;
+    animation: aparecerCarta 0.6s ease forwards;
+}
+
+.envelopeSumindo {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+#contadorCarta{
+    background: #fff5f7;
+}
+
+#btnFinalizar{
+    display: block;
+    margin-top: 20px;
+    background: #d6336c;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3 ease;
+}
+
+#btnFinalizar:hover{
+    transform: scale(1.05);
+}
+
+@keyframes aparecerCarta {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,78 @@
+.btn-voltar {
+    position: fixed;
+    top: 35px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #d6336c;
+    text-decoration: none;
+    font-size: 24px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+    z-index: 999;
+}
+
+.carrossel {
+    margin-top: 80px;
+}
+
+#fotoAtual {
+    width: 90%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.fotocarrossel {
+    background-color: #ffffff;
+    padding: 5px 5px 5px 5px;
+    width: 250px;
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: center;
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fotocarrossel:hover{
+    transform: rotate(-5deg) scale(1.05);
+    z-index: 10;
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
+}
+
+#legenda {
+    font-family: 'poppins', sans-serif;
+    margin-top: 15px;
+    padding: 15px;
+    background: #fff5f7;
+    border-radius: 15px;
+    line-height: 1.6;
+}
+
+#contadorFotos{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.controles button {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+    transform: none !important;
+}
